@@ -1,0 +1,176 @@
+<svg width="900" height="700" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font: bold 28px sans-serif; fill: #2c3e50; }
+    .subtitle { font: 16px sans-serif; fill: #34495e; }
+    .label { font: 14px sans-serif; fill: #2c3e50; }
+    .limb { fill: #3498db; stroke: #2980b9; stroke-width: 3; }
+    .joint { fill: #e74c3c; stroke: #c0392b; stroke-width: 2; }
+    .axis { stroke: #9b59b6; stroke-width: 2; stroke-dasharray: 5,5; }
+    .force { stroke: #e67e22; stroke-width: 3; stroke-dasharray: 5,5; }
+    .force-arrow { stroke: #e67e22; stroke-width: 3; fill: #e67e22; marker-end: url(#arrowhead); }
+  </style>
+
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e67e22" />
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" class="title">Robotic Limb Kinematics</text>
+  <text x="450" y="70" text-anchor="middle" class="subtitle">Basic Structure and Movement Principles</text>
+
+  <!-- Robot Body/Torso -->
+  <rect x="350" y="100" width="200" height="150" fill="#95a5a6" stroke="#7f8c8d" stroke-width="3" rx="10" ry="10" />
+  <text x="450" y="180" text-anchor="middle" class="label">Robot Body</text>
+
+  <!-- Shoulder Joint -->
+  <circle cx="450" cy="250" r="15" class="joint" />
+  <text x="450" y="245" text-anchor="middle" class="label">Shoulder</text>
+  <text x="450" y="260" text-anchor="middle" class="label">Joint</text>
+
+  <!-- Upper Arm -->
+  <line x1="450" y1="250" x2="450" y2="400" class="limb" stroke-width="20" />
+  <text x="470" y="325" class="label">Upper Arm</text>
+
+  <!-- Elbow Joint -->
+  <circle cx="450" cy="400" r="15" class="joint" />
+  <text x="450" y="395" text-anchor="middle" class="label">Elbow</text>
+  <text x="450" y="410" text-anchor="middle" class="label">Joint</text>
+
+  <!-- Lower Arm -->
+  <line x1="450" y1="400" x2="550" y2="450" class="limb" stroke-width="15" />
+  <text x="500" y="420" text-anchor="middle" class="label">Lower Arm</text>
+
+  <!-- Wrist Joint -->
+  <circle cx="550" cy="450" r="12" class="joint" />
+  <text x="550" y="445" text-anchor="middle" class="label">Wrist</text>
+  <text x="550" y="460" text-anchor="middle" class="label">Joint</text>
+
+  <!-- Hand/End Effector -->
+  <rect x="560" y="440" width="40" height="20" fill="#3498db" stroke="#2980b9" stroke-width="2" rx="5" ry="5" />
+  <text x="580" y="455" text-anchor="middle" class="label">Hand</text>
+
+  <!-- Alternative Limb Positions -->
+  <!-- Bent Arm Configuration -->
+  <line x1="450" y1="250" x2="400" y2="350" class="limb" stroke-width="20" stroke-dasharray="5,5" />
+  <circle cx="400" cy="350" r="15" fill="#e74c3c" stroke="#c0392b" stroke-width="2" />
+  <line x1="400" y1="350" x2="350" y2="400" class="limb" stroke-width="15" stroke-dasharray="5,5" />
+  <circle cx="350" cy="400" r="12" fill="#e74c3c" stroke="#c0392b" stroke-width="2" />
+  <rect x="360" y="390" width="40" height="20" fill="#3498db" stroke="#2980b9" stroke-width="2" rx="5" ry="5" stroke-dasharray="5,5" />
+
+  <!-- Extended Arm Configuration -->
+  <line x1="450" y1="250" x2="450" y2="500" class="limb" stroke-width="20" stroke-dasharray="5,5" />
+  <circle cx="450" cy="500" r="15" fill="#e74c3c" stroke="#c0392b" stroke-width="2" />
+  <line x1="450" y1="500" x2="500" y2="550" class="limb" stroke-width="15" stroke-dasharray="5,5" />
+  <circle cx="500" cy="550" r="12" fill="#e74c3c" stroke="#c0392b" stroke-width="2" />
+  <rect x="510" y="540" width="40" height="20" fill="#3498db" stroke="#2980b9" stroke-width="2" rx="5" ry="5" stroke-dasharray="5,5" />
+
+  <!-- Joint Axes -->
+  <line x1="450" y1="230" x2="450" y2="270" class="axis" />
+  <text x="460" y="250" class="label">Shoulder Axis</text>
+
+  <line x1="430" y1="400" x2="470" y2="400" class="axis" />
+  <text x="475" y="400" class="label">Elbow Axis</text>
+
+  <line x1="530" y1="450" x2="570" y2="450" class="axis" />
+  <text x="575" y="450" class="label">Wrist Axis</text>
+
+  <!-- Force Vectors -->
+  <line x1="580" y1="450" x2="620" y2="450" class="force-arrow" />
+  <text x="630" y="450" class="label">Force</text>
+
+  <line x1="580" y1="450" x2="580" y2="490" class="force-arrow" />
+  <text x="590" y="500" class="label">Load</text>
+
+  <!-- Kinematic Chain Labels -->
+  <text x="300" y="300" class="subtitle">Kinematic Chain:</text>
+  <text x="300" y="320" class="label">Body → Shoulder → Upper Arm → Elbow → Lower Arm → Wrist → Hand</text>
+
+  <!-- DOF Information -->
+  <rect x="650" y="100" width="200" height="150" fill="none" stroke="#bdc3c7" stroke-width="2" />
+  <text x="750" y="120" text-anchor="middle" class="subtitle">Degrees of Freedom</text>
+  <text x="660" y="140" class="label">• Shoulder: 3 DOF (pitch, yaw, roll)</text>
+  <text x="660" y="160" class="label">• Elbow: 1 DOF (pitch)</text>
+  <text x="660" y="180" class="label">• Wrist: 3 DOF (pitch, yaw, roll)</text>
+  <text x="660" y="200" class="label">• Total: 7 DOF</text>
+  <text x="660" y="220" class="label">• Redundant: Yes</text>
+
+  <!-- Forward Kinematics -->
+  <rect x="650" y="270" width="200" height="100" fill="none" stroke="#bdc3c7" stroke-width="2" />
+  <text x="750" y="290" text-anchor="middle" class="subtitle">Forward Kinematics</text>
+  <text x="660" y="310" class="label">Given: Joint angles</text>
+  <text x="660" y="330" class="label">Find: End effector</text>
+  <text x="660" y="350" class="label">position/orientation</text>
+
+  <!-- Inverse Kinematics -->
+  <rect x="650" y="390" width="200" height="100" fill="none" stroke="#bdc3c7" stroke-width="2" />
+  <text x="750" y="410" text-anchor="middle" class="subtitle">Inverse Kinematics</text>
+  <text x="660" y="430" class="label">Given: Desired position</text>
+  <text x="660" y="450" class="label">Find: Required joint</text>
+  <text x="660" y="470" class="label">angles</text>
+
+  <!-- Workspace -->
+  <circle cx="450" cy="450" r="200" fill="none" stroke="#95a5a6" stroke-width="2" stroke-dasharray="5,5" />
+  <text x="450" y="670" text-anchor="middle" class="label">Workspace Boundary</text>
+
+  <!-- Reach Distances -->
+  <line x1="450" y1="250" x2="450" y2="550" stroke="#e67e22" stroke-width="2" stroke-dasharray="5,5" />
+  <text x="460" y="400" class="label">Max Reach</text>
+
+  <line x1="450" y1="250" x2="650" y2="450" stroke="#e67e22" stroke-width="2" stroke-dasharray="5,5" />
+  <text x="550" y="350" class="label">Horizontal Reach</text>
+
+  <!-- Joint Angle Indicators -->
+  <path d="M 450 270 A 20 20 0 0 1 470 290" stroke="#f39c12" stroke-width="2" fill="none" />
+  <text x="475" y="295" class="label">θ₁</text>
+
+  <path d="M 470 400 A 20 20 0 0 1 490 420" stroke="#f39c12" stroke-width="2" fill="none" />
+  <text x="495" y="425" class="label">θ₂</text>
+
+  <!-- Multiple Limb Example -->
+  <text x="150" y="100" text-anchor="middle" class="subtitle">Multiple Limbs Configuration</text>
+
+  <!-- Left Arm -->
+  <line x1="350" y1="150" x2="250" y2="200" class="limb" stroke-width="15" />
+  <circle cx="250" cy="200" r="12" class="joint" />
+  <line x1="250" y1="200" x2="200" y2="250" class="limb" stroke-width="12" />
+  <circle cx="200" cy="250" r="10" class="joint" />
+  <rect x="160" y="240" width="40" height="20" fill="#3498db" stroke="#2980b9" stroke-width="2" rx="5" ry="5" />
+  <text x="200" y="280" text-anchor="middle" class="label">Left Arm</text>
+
+  <!-- Right Arm -->
+  <line x1="550" y1="150" x2="650" y2="200" class="limb" stroke-width="15" />
+  <circle cx="650" cy="200" r="12" class="joint" />
+  <line x1="650" y1="200" x2="700" y2="250" class="limb" stroke-width="12" />
+  <circle cx="700" cy="250" r="10" class="joint" />
+  <rect x="700" y="240" width="40" height="20" fill="#3498db" stroke="#2980b9" stroke-width="2" rx="5" ry="5" />
+  <text x="700" y="280" text-anchor="middle" class="label">Right Arm</text>
+
+  <!-- Legs -->
+  <line x1="400" y1="250" x2="400" y2="350" class="limb" stroke-width="18" />
+  <circle cx="400" cy="350" r="12" class="joint" />
+  <line x1="400" y1="350" x2="380" y2="450" class="limb" stroke-width="15" />
+  <circle cx="380" cy="450" r="10" class="joint" />
+  <rect x="360" y="450" width="40" height="15" fill="#3498db" stroke="#2980b9" stroke-width="2" rx="5" ry="5" />
+  <text x="400" y="480" text-anchor="middle" class="label">Left Leg</text>
+
+  <line x1="500" y1="250" x2="500" y2="350" class="limb" stroke-width="18" />
+  <circle cx="500" cy="350" r="12" class="joint" />
+  <line x1="500" y1="350" x2="520" y2="450" class="limb" stroke-width="15" />
+  <circle cx="520" cy="450" r="10" class="joint" />
+  <rect x="500" y="450" width="40" height="15" fill="#3498db" stroke="#2980b9" stroke-width="2" rx="5" ry="5" />
+  <text x="500" y="480" text-anchor="middle" class="label">Right Leg</text>
+
+  <!-- Coordinate System -->
+  <line x1="800" y1="600" x2="850" y2="600" stroke="#e74c3c" stroke-width="3" marker-end="url(#arrowhead)" />
+  <text x="855" y="600" class="label">X</text>
+
+  <line x1="800" y1="600" x2="800" y2="550" stroke="#2ecc71" stroke-width="3" marker-end="url(#arrowhead)" />
+  <text x="800" y="545" class="label">Y</text>
+
+  <line x1="800" y1="600" x2="770" y2="570" stroke="#3498db" stroke-width="3" marker-end="url(#arrowhead)" />
+  <text x="765" y="565" class="label">Z</text>
+
+  <text x="800" y="615" class="label">Coordinate System</text>
+</svg>

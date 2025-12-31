@@ -1,0 +1,416 @@
+openapi: 3.0.0
+info:
+  title: RAG Chatbot API for AI Robotics Textbook
+  description: API for the Retrieval-Augmented Generation chatbot that allows users to ask questions about the AI Robotics textbook content
+  version: 1.0.0
+servers:
+  - url: http://localhost:8000
+    description: Development server
+  - url: https://your-deployment-url.com
+    description: Production server
+
+paths:
+  /api/v1/chat/start:
+    post:
+      summary: Start a new conversation
+      description: Creates a new chat conversation and returns the conversation ID
+      tags:
+        - Chat
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: string
+                  description: The ID of the user starting the conversation
+                  example: "user-123"
+              required:
+                - user_id
+      responses:
+        '200':
+          description: Successfully created a new conversation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  conversation_id:
+                    type: string
+                    description: The ID of the newly created conversation
+                    example: "conv-456"
+                  message:
+                    type: string
+                    description: Confirmation message
+                    example: "New conversation started"
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/chat/{conversation_id}/message:
+    post:
+      summary: Send a message to the chatbot
+      description: Sends a user message to the chatbot and returns the AI response
+      tags:
+        - Chat
+      parameters:
+        - name: conversation_id
+          in: path
+          required: true
+          schema:
+            type: string
+            description: The ID of the conversation
+            example: "conv-456"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                message:
+                  type: string
+                  description: The user's message
+                  example: "What is ROS 2?"
+                selected_text:
+                  type: string
+                  description: Optional selected text for context-aware responses
+                  example: "ROS 2 (Robot Operating System 2) is a set of software libraries and tools that help you build robot applications."
+              required:
+                - message
+      responses:
+        '200':
+          description: Successfully processed the message
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: string
+                    description: The AI's response to the user's message
+                    example: "ROS 2 is a flexible framework for writing robot software..."
+                  sources:
+                    type: array
+                    items:
+                      type: string
+                    description: List of source documents used to generate the response
+                    example: ["/docs/module-1-ros2/week1-foundations.md"]
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Conversation not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/chat/{conversation_id}:
+    get:
+      summary: Get conversation details
+      description: Retrieves details about a specific conversation
+      tags:
+        - Chat
+      parameters:
+        - name: conversation_id
+          in: path
+          required: true
+          schema:
+            type: string
+            description: The ID of the conversation
+            example: "conv-456"
+      responses:
+        '200':
+          description: Successfully retrieved conversation details
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: The conversation ID
+                    example: "conv-456"
+                  title:
+                    type: string
+                    description: The conversation title
+                    example: "Introduction to ROS 2"
+                  created_at:
+                    type: string
+                    format: date-time
+                    description: When the conversation was created
+                    example: "2023-10-20T10:00:00Z"
+                  updated_at:
+                    type: string
+                    format: date-time
+                    description: When the conversation was last updated
+                    example: "2023-10-20T10:05:00Z"
+        '404':
+          description: Conversation not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/chat/{conversation_id}/messages:
+    get:
+      summary: Get messages in a conversation
+      description: Retrieves all messages in a specific conversation
+      tags:
+        - Chat
+      parameters:
+        - name: conversation_id
+          in: path
+          required: true
+          schema:
+            type: string
+            description: The ID of the conversation
+            example: "conv-456"
+      responses:
+        '200':
+          description: Successfully retrieved messages
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  messages:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Message'
+        '404':
+          description: Conversation not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/documents/:
+    get:
+      summary: List all processed documents
+      description: Retrieves a list of all documents that have been processed for the RAG system
+      tags:
+        - Documents
+      responses:
+        '200':
+          description: Successfully retrieved document list
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  documents:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Document'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/documents/refresh:
+    post:
+      summary: Refresh document embeddings
+      description: Processes all source documents and updates embeddings in the vector store
+      tags:
+        - Documents
+      responses:
+        '200':
+          description: Successfully started document refresh process
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Status message
+                    example: "Document refresh process started"
+                  document_count:
+                    type: integer
+                    description: Number of documents being processed
+                    example: 15
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/auth/login:
+    post:
+      summary: User login
+      description: Authenticates a user and returns an access token
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  format: email
+                  description: The user's email address
+                  example: "user@example.com"
+                password:
+                  type: string
+                  description: The user's password
+                  example: "securePassword123"
+              required:
+                - email
+                - password
+      responses:
+        '200':
+          description: Successfully logged in
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  access_token:
+                    type: string
+                    description: JWT access token
+                    example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+                  token_type:
+                    type: string
+                    description: Type of the token
+                    example: "bearer"
+        '401':
+          description: Invalid credentials
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/v1/auth/register:
+    post:
+      summary: User registration
+      description: Registers a new user
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  format: email
+                  description: The user's email address
+                  example: "newuser@example.com"
+                username:
+                  type: string
+                  description: The user's display name
+                  example: "NewUser"
+                password:
+                  type: string
+                  description: The user's password
+                  example: "securePassword123"
+              required:
+                - email
+                - username
+                - password
+      responses:
+        '200':
+          description: Successfully registered
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Success message
+                    example: "User registered successfully"
+        '400':
+          description: Invalid input or user already exists
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+components:
+  schemas:
+    Message:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The message ID
+          example: "msg-789"
+        conversation_id:
+          type: string
+          description: The conversation ID this message belongs to
+          example: "conv-456"
+        sender_type:
+          type: string
+          enum: [user, assistant]
+          description: Who sent the message
+          example: "user"
+        content:
+          type: string
+          description: The message content
+          example: "What is ROS 2?"
+        timestamp:
+          type: string
+          format: date-time
+          description: When the message was sent
+          example: "2023-10-20T10:05:00Z"
+        metadata:
+          type: object
+          description: Additional message metadata
+          example: {"selected_text": "ROS 2 (Robot Operating System 2) is a set of software libraries..."}
+
+    Document:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The document ID
+          example: "doc-abc"
+        source_path:
+          type: string
+          description: Path to the original .md file
+          example: "/docs/module-1-ros2/week1-foundations.md"
+        title:
+          type: string
+          description: Title of the document
+          example: "Foundations of Physical AI"
+        created_at:
+          type: string
+          format: date-time
+          description: When the document was first processed
+          example: "2023-10-20T09:00:00Z"
+        updated_at:
+          type: string
+          format: date-time
+          description: When the document was last updated
+          example: "2023-10-20T09:00:00Z"
+        is_processed:
+          type: boolean
+          description: Whether the document embeddings are ready
+          example: true
+
+    ErrorResponse:
+      type: object
+      properties:
+        detail:
+          type: string
+          description: Error message
+          example: "Invalid input provided"

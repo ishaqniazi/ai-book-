@@ -1,0 +1,169 @@
+<svg width="1000" height="700" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font: bold 26px sans-serif; fill: #2c3e50; }
+    .subtitle { font: 16px sans-serif; fill: #34495e; }
+    .label { font: 14px sans-serif; fill: #2c3e50; }
+    .stage-box { fill: #3498db; stroke: #2980b9; stroke-width: 2; rx: 10; ry: 10; }
+    .processing { fill: #9b59b6; stroke: #8e44ad; stroke-width: 2; rx: 10; ry: 10; }
+    .output { fill: #2ecc71; stroke: #27ae60; stroke-width: 2; rx: 10; ry: 10; }
+    .arrow { stroke: #2c3e50; stroke-width: 3; marker-end: url(#arrowhead); }
+    .sensor { fill: #e74c3c; stroke: #c0392b; stroke-width: 2; }
+  </style>
+
+  <defs>
+    <marker id="arrowhead" markerWidth="12" markerHeight="8" refX="11" refY="4" orient="auto">
+      <polygon points="0 0, 12 4, 0 8" fill="#2c3e50" />
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="500" y="40" text-anchor="middle" class="title">Vision System Pipeline</text>
+  <text x="500" y="70" text-anchor="middle" class="subtitle">From Raw Sensor Data to Semantic Understanding</text>
+
+  <!-- Camera/Sensor Input -->
+  <circle cx="100" cy="150" r="40" class="sensor" />
+  <text x="100" y="145" text-anchor="middle" class="label">Camera</text>
+  <text x="100" y="165" text-anchor="middle" class="label">Sensor</text>
+
+  <!-- Raw Image -->
+  <rect x="180" y="120" width="100" height="60" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="2" />
+  <text x="230" y="150" text-anchor="middle" class="label">Raw Image</text>
+  <text x="230" y="165" text-anchor="middle" class="label">RGB Data</text>
+
+  <!-- Preprocessing Stage -->
+  <rect x="320" y="120" width="120" height="60" class="stage-box" />
+  <text x="380" y="150" text-anchor="middle" class="label">Preprocessing</text>
+  <text x="380" y="165" text-anchor="middle" class="label">Filtering</text>
+
+  <!-- Feature Extraction Stage -->
+  <rect x="480" y="120" width="140" height="60" class="stage-box" />
+  <text x="550" y="145" text-anchor="middle" class="label">Feature</text>
+  <text x="550" y="160" text-anchor="middle" class="label">Extraction</text>
+
+  <!-- Object Detection Stage -->
+  <rect x="660" y="120" width="140" height="60" class="processing" />
+  <text x="730" y="145" text-anchor="middle" class="label">Object</text>
+  <text x="730" y="160" text-anchor="middle" class="label">Detection</text>
+
+  <!-- Recognition Stage -->
+  <rect x="840" y="120" width="120" height="60" class="processing" />
+  <text x="900" y="145" text-anchor="middle" class="label">Object</text>
+  <text x="900" y="160" text-anchor="middle" class="label">Recognition</text>
+
+  <!-- Semantic Understanding Output -->
+  <rect x="700" y="220" width="160" height="60" class="output" />
+  <text x="780" y="245" text-anchor="middle" class="label">Semantic</text>
+  <text x="780" y="260" text-anchor="middle" class="label">Understanding</text>
+
+  <!-- 3D Reconstruction Output -->
+  <rect x="450" y="220" width="160" height="60" class="output" />
+  <text x="530" y="245" text-anchor="middle" class="label">3D</text>
+  <text x="530" y="260" text-anchor="middle" class="label">Reconstruction</text>
+
+  <!-- Scene Understanding Output -->
+  <rect x="200" y="220" width="160" height="60" class="output" />
+  <text x="280" y="245" text-anchor="middle" class="label">Scene</text>
+  <text x="280" y="260" text-anchor="middle" class="label">Understanding</text>
+
+  <!-- Processing Arrows -->
+  <line x1="140" y1="150" x2="180" y2="150" class="arrow" />
+  <line x1="280" y1="150" x2="320" y2="150" class="arrow" />
+  <line x1="440" y1="150" x2="480" y2="150" class="arrow" />
+  <line x1="620" y1="150" x2="660" y2="150" class="arrow" />
+  <line x1="800" y1="150" x2="840" y2="150" class="arrow" />
+
+  <!-- Output Arrows -->
+  <line x1="650" y1="150" x2="530" y2="220" class="arrow" />
+  <line x1="650" y1="150" x2="780" y2="220" class="arrow" />
+  <line x1="650" y1="150" x2="280" y2="220" class="arrow" />
+
+  <!-- Depth/Range Sensor -->
+  <circle cx="100" cy="350" r="40" class="sensor" />
+  <text x="100" y="345" text-anchor="middle" class="label">Depth</text>
+  <text x="100" y="365" text-anchor="middle" class="label">Sensor</text>
+
+  <!-- Depth Map -->
+  <rect x="180" y="320" width="100" height="60" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="2" />
+  <text x="230" y="345" text-anchor="middle" class="label">Depth</text>
+  <text x="230" y="360" text-anchor="middle" class="label">Map</text>
+
+  <!-- Stereo Processing -->
+  <rect x="320" y="320" width="120" height="60" class="stage-box" />
+  <text x="380" y="345" text-anchor="middle" class="label">Stereo</text>
+  <text x="380" y="360" text-anchor="middle" class="label">Processing</text>
+
+  <!-- Depth Integration -->
+  <rect x="480" y="320" width="140" height="60" class="processing" />
+  <text x="550" y="345" text-anchor="middle" class="label">Depth</text>
+  <text x="550" y="360" text-anchor="middle" class="label">Integration</text>
+
+  <!-- 3D Point Cloud -->
+  <rect x="660" y="320" width="140" height="60" class="processing" />
+  <text x="730" y="345" text-anchor="middle" class="label">3D Point</text>
+  <text x="730" y="360" text-anchor="middle" class="label">Cloud</text>
+
+  <!-- Surface Reconstruction -->
+  <rect x="840" y="320" width="120" height="60" class="processing" />
+  <text x="900" y="345" text-anchor="middle" class="label">Surface</text>
+  <text x="900" y="360" text-anchor="middle" class="label">Reconstruction</text>
+
+  <!-- Depth Pipeline Arrows -->
+  <line x1="140" y1="350" x2="180" y2="350" class="arrow" />
+  <line x1="280" y1="350" x2="320" y2="350" class="arrow" />
+  <line x1="440" y1="350" x2="480" y2="350" class="arrow" />
+  <line x1="620" y1="350" x2="660" y2="350" class="arrow" />
+  <line x1="800" y1="350" x2="840" y2="350" class="arrow" />
+
+  <!-- Motion Analysis Section -->
+  <circle cx="100" cy="500" r="40" class="sensor" />
+  <text x="100" y="495" text-anchor="middle" class="label">Optical</text>
+  <text x="100" y="515" text-anchor="middle" class="label">Flow</text>
+
+  <!-- Motion Vectors -->
+  <rect x="180" y="470" width="100" height="60" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="2" />
+  <text x="230" y="495" text-anchor="middle" class="label">Motion</text>
+  <text x="230" y="510" text-anchor="middle" class="label">Vectors</text>
+
+  <!-- Motion Analysis -->
+  <rect x="320" y="470" width="120" height="60" class="stage-box" />
+  <text x="380" y="495" text-anchor="middle" class="label">Motion</text>
+  <text x="380" y="510" text-anchor="middle" class="label">Analysis</text>
+
+  <!-- Object Tracking -->
+  <rect x="480" y="470" width="140" height="60" class="processing" />
+  <text x="550" y="495" text-anchor="middle" class="label">Object</text>
+  <text x="550" y="510" text-anchor="middle" class="label">Tracking</text>
+
+  <!-- Behavior Recognition -->
+  <rect x="660" y="470" width="140" height="60" class="processing" />
+  <text x="730" y="495" text-anchor="middle" class="label">Behavior</text>
+  <text x="730" y="510" text-anchor="middle" class="label">Recognition</text>
+
+  <!-- Action Understanding -->
+  <rect x="840" y="470" width="120" height="60" class="processing" />
+  <text x="900" y="495" text-anchor="middle" class="label">Action</text>
+  <text x="900" y="510" text-anchor="middle" class="label">Understanding</text>
+
+  <!-- Motion Pipeline Arrows -->
+  <line x1="140" y1="500" x2="180" y2="500" class="arrow" />
+  <line x1="280" y1="500" x2="320" y2="500" class="arrow" />
+  <line x1="440" y1="500" x2="480" y2="500" class="arrow" />
+  <line x1="620" y1="500" x2="660" y2="500" class="arrow" />
+  <line x1="800" y1="500" x2="840" y2="500" class="arrow" />
+
+  <!-- Labels for each pipeline -->
+  <text x="500" y="100" text-anchor="middle" class="subtitle">RGB Vision Pipeline</text>
+  <text x="500" y="300" text-anchor="middle" class="subtitle">Depth/3D Vision Pipeline</text>
+  <text x="500" y="450" text-anchor="middle" class="subtitle">Motion Analysis Pipeline</text>
+
+  <!-- Integration Point -->
+  <circle cx="500" cy="600" r="50" fill="#f39c12" stroke="#e67e22" stroke-width="3" />
+  <text x="500" y="595" text-anchor="middle" class="label">Multi-modal</text>
+  <text x="500" y="610" text-anchor="middle" class="label">Integration</text>
+  <text x="500" y="625" text-anchor="middle" class="label">Fusion</text>
+
+  <!-- Arrows to Integration -->
+  <line x1="780" y1="280" x2="550" y2="550" class="arrow" />
+  <line x1="530" y1="380" x2="500" y2="550" class="arrow" />
+  <line x1="900" y1="530" x2="550" y2="550" class="arrow" />
+</svg>

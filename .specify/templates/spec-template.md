@@ -84,21 +84,28 @@
 
 ### Functional Requirements
 
-- **FR-001**: System MUST [specific capability, e.g., "allow users to create accounts"]
-- **FR-002**: System MUST [specific capability, e.g., "validate email addresses"]  
-- **FR-003**: Users MUST be able to [key interaction, e.g., "reset their password"]
-- **FR-004**: System MUST [data requirement, e.g., "persist user preferences"]
-- **FR-005**: System MUST [behavior, e.g., "log all security events"]
+- **FR-001**: System MUST follow Digital Brain → Physical Body (Embodied Intelligence) theme for textbook content
+- **FR-002**: System MUST restrict execution to textbook content creation (no chatbot dev, hardware install, or ROS/robot automation unless in /specs/features/)
+- **FR-003**: Content MUST be in English with code comments in English and user-facing responses in Roman Urdu
+- **FR-004**: System MUST organize content by feature/module with maximum 3-4 nesting levels
+- **FR-005**: System MUST auto-generate missing files/folders with proper header format and auto-gen comments
+- **FR-006**: System MUST follow 13-week course structure: Module 1 (ROS 2), Module 2 (Digital Twin), Module 3 (NVIDIA Isaac), Module 4 (Vision-Language-Action)
+- **FR-007**: Content MUST meet word count requirements: 15,000-20,000 total (Module 1: 4k-5k, Module 2: 3.5k-4.5k, Module 3: 4k-5k, Module 4: 3.5k-4.5k)
+- **FR-008**: Code examples MUST be Ubuntu 22.04 compatible with type hints, English comments, and error handling
+- **FR-009**: System MUST include minimum 5 examples per module with proper error handling
+- **FR-010**: System MUST include 3 diagrams per module (total 12) for visual learning support
+- **FR-011**: All content MUST follow Docusaurus Markdown format with required frontmatter
+- **FR-012**: System MUST comply with Ubuntu 22.04, ROS 2 Humble/Iron, and WCAG 2.1 AA accessibility standards
 
 *Example of marking unclear requirements:*
 
-- **FR-006**: System MUST authenticate users via [NEEDS CLARIFICATION: auth method not specified - email/password, SSO, OAuth?]
-- **FR-007**: System MUST retain user data for [NEEDS CLARIFICATION: retention period not specified]
+- **FR-013**: System MUST include hardware documentation for [NEEDS CLARIFICATION: specific hardware requirements - Digital Twin Workstation, Edge AI Kit, Robot Lab Options, or Cloud Alternative?]
 
 ### Key Entities *(include if feature involves data)*
 
-- **[Entity 1]**: [What it represents, key attributes without implementation]
-- **[Entity 2]**: [What it represents, relationships to other entities]
+- **[Textbook Module]**: Represents a course module (Module 1-4) with specific content requirements, examples, and diagrams
+- **[Docusaurus Content]**: Represents textbook content in Docusaurus Markdown format with proper frontmatter
+- **[Hardware Documentation]**: Represents hardware setup guides for Digital Twin Workstation, Edge AI Kit, Robot Lab Options, or Cloud Alternative
 
 ## Success Criteria *(mandatory)*
 

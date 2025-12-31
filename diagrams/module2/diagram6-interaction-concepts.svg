@@ -1,0 +1,117 @@
+<svg width="900" height="700" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font: bold 26px sans-serif; fill: #2c3e50; }
+    .subtitle { font: 16px sans-serif; fill: #34495e; }
+    .label { font: 14px sans-serif; fill: #2c3e50; }
+    .concept-box { fill: #ecf0f1; stroke: #bdc3c7; stroke-width: 2; rx: 10; ry: 10; }
+    .interaction { fill: #3498db; stroke: #2980b9; stroke-width: 2; }
+    .attention { fill: #e74c3c; stroke: #c0392b; stroke-width: 2; }
+    .gesture { fill: #2ecc71; stroke: #27ae60; stroke-width: 2; }
+    .arrow { stroke: #2c3e50; stroke-width: 2; marker-end: url(#arrowhead); }
+  </style>
+
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2c3e50" />
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" class="title">Human-Robot Interaction Concepts</text>
+  <text x="450" y="70" text-anchor="middle" class="subtitle">Key Elements of Effective Human-Robot Communication</text>
+
+  <!-- Main Interaction Circle -->
+  <circle cx="450" cy="350" r="150" fill="none" stroke="#9b59b6" stroke-width="3" stroke-dasharray="5,5" />
+  <text x="450" y="355" text-anchor="middle" class="label">Interaction Space</text>
+
+  <!-- Attention Concept -->
+  <circle cx="300" cy="250" r="40" class="attention" />
+  <text x="300" y="245" text-anchor="middle" class="label">Attention</text>
+  <text x="300" y="265" text-anchor="middle" class="label">Focus</text>
+
+  <!-- Gesture Concept -->
+  <circle cx="600" cy="250" r="40" class="gesture" />
+  <text x="600" y="245" text-anchor="middle" class="label">Gesture</text>
+  <text x="600" y="265" text-anchor="middle" class="label">Action</text>
+
+  <!-- Intention Concept -->
+  <circle cx="450" cy="200" r="40" class="interaction" />
+  <text x="450" y="195" text-anchor="middle" class="label">Intention</text>
+  <text x="450" y="215" text-anchor="middle" class="label">Goal</text>
+
+  <!-- Communication Concept -->
+  <circle cx="300" cy="450" r="40" class="interaction" />
+  <text x="300" y="445" text-anchor="middle" class="label">Speech</text>
+  <text x="300" y="465" text-anchor="middle" class="label">Communication</text>
+
+  <!-- Response Concept -->
+  <circle cx="600" cy="450" r="40" class="interaction" />
+  <text x="600" y="445" text-anchor="middle" class="label">Response</text>
+  <text x="600" y="465" text-anchor="middle" class="label">Feedback</text>
+
+  <!-- Robot Representation -->
+  <rect x="200" y="550" width="50" height="80" fill="#e74c3c" stroke="#c0392b" stroke-width="2" />
+  <circle cx="225" cy="540" r="15" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="2" />
+  <text x="225" y="650" text-anchor="middle" class="label">Robot</text>
+
+  <!-- Human Representation -->
+  <circle cx="675" cy="570" r="30" fill="#3498db" stroke="#2980b9" stroke-width="2" />
+  <rect x="650" y="600" width="50" height="70" fill="#3498db" stroke="#2980b9" stroke-width="2" />
+  <text x="675" y="690" text-anchor="middle" class="label">Human</text>
+
+  <!-- Interaction Arrows -->
+  <line x1="250" y1="600" x2="650" y2="600" class="arrow" />
+  <text x="450" y="590" text-anchor="middle" class="label">Interaction Flow</text>
+
+  <line x1="650" y1="570" x2="250" y2="570" class="arrow" />
+  <text x="450" y="560" text-anchor="middle" class="label">Bidirectional</text>
+
+  <!-- Concept Connections -->
+  <line x1="300" y1="290" x2="450" y2="200" class="arrow" />
+  <line x1="600" y1="290" x2="450" y2="200" class="arrow" />
+  <line x1="300" y1="410" x2="300" y2="290" class="arrow" />
+  <line x1="600" y1="410" x2="600" y2="290" class="arrow" />
+  <line x1="340" y1="450" x2="560" y2="450" class="arrow" />
+
+  <!-- Concept Boxes -->
+  <rect x="50" y="150" width="180" height="120" class="concept-box" />
+  <text x="140" y="170" text-anchor="middle" class="label">Attention</text>
+  <text x="140" y="190" text-anchor="middle" class="label">Mechanisms</text>
+  <text x="140" y="210" text-anchor="middle" class="label">• Selective</text>
+  <text x="140" y="230" text-anchor="middle" class="label">• Divided</text>
+  <text x="140" y="250" text-anchor="middle" class="label">• Sustained</text>
+
+  <rect x="670" y="150" width="180" height="120" class="concept-box" />
+  <text x="760" y="170" text-anchor="middle" class="label">Gesture</text>
+  <text x="760" y="190" text-anchor="middle" class="label">Recognition</text>
+  <text x="760" y="210" text-anchor="middle" class="label">• Pointing</text>
+  <text x="760" y="230" text-anchor="middle" class="label">• Waving</text>
+  <text x="760" y="250" text-anchor="middle" class="label">• Signaling</text>
+
+  <rect x="50" y="450" width="180" height="120" class="concept-box" />
+  <text x="140" y="470" text-anchor="middle" class="label">Communication</text>
+  <text x="140" y="490" text-anchor="middle" class="label">Protocols</text>
+  <text x="140" y="510" text-anchor="middle" class="label">• Speech</text>
+  <text x="140" y="530" text-anchor="middle" class="label">• Visual</text>
+  <text x="140" y="550" text-anchor="middle" class="label">• Haptic</text>
+
+  <rect x="670" y="450" width="180" height="120" class="concept-box" />
+  <text x="760" y="470" text-anchor="middle" class="label">Response</text>
+  <text x="760" y="490" text-anchor="middle" class="label">Generation</text>
+  <text x="760" y="510" text-anchor="middle" class="label">• Appropriate</text>
+  <text x="760" y="530" text-anchor="middle" class="label">• Timely</text>
+  <text x="760" y="550" text-anchor="middle" class="label">• Contextual</text>
+
+  <!-- Central Interaction Model -->
+  <circle cx="450" cy="500" r="60" fill="#f39c12" stroke="#e67e22" stroke-width="3" />
+  <text x="450" y="495" text-anchor="middle" class="label">Interaction</text>
+  <text x="450" y="515" text-anchor="middle" class="label">Model</text>
+  <text x="450" y="535" text-anchor="middle" class="label">Core</text>
+
+  <!-- Connecting Lines to Center -->
+  <line x1="300" y1="250" x2="450" y2="500" class="arrow" />
+  <line x1="600" y1="250" x2="450" y2="500" class="arrow" />
+  <line x1="300" y1="450" x2="450" y2="500" class="arrow" />
+  <line x1="600" y1="450" x2="450" y2="500" class="arrow" />
+  <line x1="450" y1="200" x2="450" y2="440" class="arrow" />
+</svg>

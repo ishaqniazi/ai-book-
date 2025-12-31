@@ -48,9 +48,10 @@ description: "Task list template for feature implementation"
 
 **Purpose**: Project initialization and basic structure
 
-- [ ] T001 Create project structure per implementation plan
-- [ ] T002 Initialize [language] project with [framework] dependencies
-- [ ] T003 [P] Configure linting and formatting tools
+- [ ] T001 Create Docusaurus textbook project structure per AI textbook constitution
+- [ ] T002 Initialize Docusaurus documentation site with proper configuration
+- [ ] T003 [P] Configure Markdown formatting and frontmatter templates per constitution
+- [ ] T004 [P] Set up proper directory structure organizing by feature/module (max 3-4 nesting levels)
 
 ---
 
@@ -62,12 +63,12 @@ description: "Task list template for feature implementation"
 
 Examples of foundational tasks (adjust based on your project):
 
-- [ ] T004 Setup database schema and migrations framework
-- [ ] T005 [P] Implement authentication/authorization framework
-- [ ] T006 [P] Setup API routing and middleware structure
-- [ ] T007 Create base models/entities that all stories depend on
-- [ ] T008 Configure error handling and logging infrastructure
-- [ ] T009 Setup environment configuration management
+- [ ] T005 Setup Docusaurus configuration with proper frontmatter requirements
+- [ ] T006 [P] Establish content organization by feature/module per constitution
+- [ ] T007 [P] Configure auto-generation system for missing files/folders with proper headers
+- [ ] T008 Create base content templates that all modules depend on
+- [ ] T009 Configure accessibility compliance (WCAG 2.1 AA) for all content
+- [ ] T010 Setup proper language standards (English docs/code, Roman Urdu responses)
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 

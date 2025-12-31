@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="700" height="350" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font: bold 16px sans-serif; fill: #333; }
+    .subtitle { font: 12px sans-serif; fill: #666; }
+    .real-world { fill: #fff3e0; stroke: #f57c00; stroke-width: 2; rx: 10; ry: 10; }
+    .digital-world { fill: #e3f2fd; stroke: #1976d2; stroke-width: 2; rx: 10; ry: 10; }
+    .arrow { stroke: #666; stroke-width: 2; marker-end: url(#arrowhead); }
+    .arrow-label { font: 12px sans-serif; fill: #666; }
+    .world-title { font: bold 14px sans-serif; }
+  </style>
+
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7"
+      refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666" />
+    </marker>
+  </defs>
+
+  <text x="20" y="25" class="title">Physical AI: Real World ↔ Digital World Loop</text>
+  <text x="20" y="45" class="subtitle">The continuous interaction between physical and digital representations</text>
+
+  <!-- Real World Box -->
+  <rect x="50" y="100" width="200" height="200" class="real-world"/>
+  <text x="150" y="125" text-anchor="middle" class="world-title">Real World</text>
+
+  <!-- Real World Contents -->
+  <text x="150" y="150" text-anchor="middle" class="subtitle">Physical System</text>
+  <text x="150" y="170" text-anchor="middle" class="subtitle">• Robot Body</text>
+  <text x="150" y="185" text-anchor="middle" class="subtitle">• Sensors</text>
+  <text x="150" y="200" text-anchor="middle" class="subtitle">• Environment</text>
+  <text x="150" y="215" text-anchor="middle" class="subtitle">• Obstacles</text>
+  <text x="150" y="230" text-anchor="middle" class="subtitle">• Objects</text>
+  <text x="150" y="250" text-anchor="middle" class="subtitle">→ Physical Reality</text>
+
+  <!-- Digital World Box -->
+  <rect x="450" y="100" width="200" height="200" class="digital-world"/>
+  <text x="550" y="125" text-anchor="middle" class="world-title">Digital World</text>
+
+  <!-- Digital World Contents -->
+  <text x="550" y="150" text-anchor="middle" class="subtitle">Virtual System</text>
+  <text x="550" y="165" text-anchor="middle" class="subtitle">• Digital Model</text>
+  <text x="550" y="180" text-anchor="middle" class="subtitle">• Simulation</text>
+  <text x="550" y="195" text-anchor="middle" class="subtitle">• State Estimation</text>
+  <text x="550" y="210" text-anchor="middle" class="subtitle">• Planning</text>
+  <text x="550" y="225" text-anchor="middle" class="subtitle">• Control Logic</text>
+  <text x="550" y="250" text-anchor="middle" class="subtitle">→ Digital Twin</text>
+
+  <!-- Real to Digital Arrow (Top) -->
+  <path d="M 250 130 C 350 130, 350 130, 450 130" class="arrow" fill="none"/>
+  <text x="350" y="120" text-anchor="middle" class="arrow-label">Sensor Data</text>
+  <text x="350" y="135" text-anchor="middle" class="arrow-label">Mapping</text>
+
+  <!-- Digital to Real Arrow (Bottom) -->
+  <path d="M 450 270 C 350 270, 350 270, 250 270" class="arrow" fill="none"/>
+  <text x="350" y="285" text-anchor="middle" class="arrow-label">Control Commands</text>
+  <text x="350" y="300" text-anchor="middle" class="arrow-label">Actuation</text>
+
+  <!-- Two-way arrow in the middle -->
+  <line x1="250" y1="200" x2="450" y2="200" class="arrow"/>
+  <text x="350" y="190" text-anchor="middle" class="arrow-label">Bidirectional</text>
+  <text x="350" y="205" text-anchor="middle" class="arrow-label">Synchronization</text>
+</svg>

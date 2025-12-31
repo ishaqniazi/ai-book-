@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="600" height="200" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font: bold 16px sans-serif; fill: #333; }
+    .subtitle { font: 12px sans-serif; fill: #666; }
+    .box { fill: #e1f5fe; stroke: #0277bd; stroke-width: 2; rx: 10; ry: 10; }
+    .arrow { stroke: #0277bd; stroke-width: 2; marker-end: url(#arrowhead); }
+    .arrow-label { font: 12px sans-serif; fill: #0277bd; }
+  </style>
+
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7"
+      refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0277bd" />
+    </marker>
+  </defs>
+
+  <text x="20" y="25" class="title">Physical AI: Sensor → Brain → Action Flow</text>
+  <text x="20" y="45" class="subtitle">The fundamental loop of embodied intelligence</text>
+
+  <!-- Sensor Box -->
+  <rect x="50" y="80" width="120" height="60" class="box"/>
+  <text x="110" y="100" text-anchor="middle" class="subtitle">Sensors</text>
+  <text x="110" y="115" text-anchor="middle" class="subtitle">• Vision</text>
+  <text x="110" y="130" text-anchor="middle" class="subtitle">• Touch, Audio</text>
+
+  <!-- Arrow to Brain -->
+  <line x1="170" y1="110" x2="230" y2="110" class="arrow"/>
+  <text x="200" y="100" text-anchor="middle" class="arrow-label">Raw Data</text>
+
+  <!-- Brain Box -->
+  <rect x="230" y="80" width="140" height="60" class="box"/>
+  <text x="300" y="100" text-anchor="middle" class="subtitle">Digital Brain</text>
+  <text x="300" y="115" text-anchor="middle" class="subtitle">• Processing</text>
+  <text x="300" y="130" text-anchor="middle" class="subtitle">• Decision Making</text>
+
+  <!-- Arrow to Action -->
+  <line x1="370" y1="110" x2="430" y2="110" class="arrow"/>
+  <text x="400" y="100" text-anchor="middle" class="arrow-label">Commands</text>
+
+  <!-- Action Box -->
+  <rect x="430" y="80" width="120" height="60" class="box"/>
+  <text x="490" y="100" text-anchor="middle" class="subtitle">Physical Body</text>
+  <text x="490" y="115" text-anchor="middle" class="subtitle">• Actuators</text>
+  <text x="490" y="130" text-anchor="middle" class="subtitle">• Movement</text>
+
+  <!-- Feedback Arrow (Action to Sensor) -->
+  <path d="M 490 140 C 490 170, 110 170, 110 140" class="arrow" fill="none"/>
+  <text x="300" y="180" text-anchor="middle" class="arrow-label">Feedback Loop</text>
+</svg>

@@ -31,7 +31,17 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+### Compliance with AI Textbook Constitution
+
+- ✅ **Theme & Purpose**: Verify project aligns with Digital Brain → Physical Body (Embodied Intelligence) textbook on Physical AI & Humanoid Robotics
+- ✅ **Execution Scope**: Confirm work restricted to textbook content creation (no chatbot development, hardware installation, or ROS/robot automation unless in /specs/features/)
+- ✅ **Language Standards**: Ensure code/docs in English, file names in English kebab-case, user responses in Roman Urdu
+- ✅ **Organization**: Verify organization by feature/module, max 3-4 nesting levels, clean root
+- ✅ **Auto-Creation**: Confirm auto-generation of missing files/folders with proper headers
+- ✅ **Course Structure**: Validate alignment with 13-week structure (Module 1: ROS 2, Module 2: Digital Twin, Module 3: NVIDIA Isaac, Module 4: Vision-Language-Action)
+- ✅ **Content Requirements**: Verify word counts (15k-20k total), 5+ examples per module, Ubuntu 22.04 compatibility, type hints, English comments
+- ✅ **Technical Standards**: Confirm Ubuntu 22.04, ROS 2 Humble/Iron, WCAG 2.1 AA compliance
+- ✅ **Format Standards**: Ensure Docusaurus Markdown with proper frontmatter
 
 ## Project Structure
 

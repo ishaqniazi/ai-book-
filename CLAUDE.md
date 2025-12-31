@@ -208,3 +208,11 @@ Wait for consent; never auto-create ADRs. Group related decisions (stacks, authe
 
 ## Code Standards
 See `.specify/memory/constitution.md` for code quality, testing, performance, security, and architecture principles.
+
+## Recent Changes
+- 001-ai-robotics-textbook: Added Python 3.11, JavaScript/TypeScript for frontend integration + FastAPI, Qdrant, Neon Postgres, OpenAI API, Docusaurus
+- 001-ai-robotics-textbook: Added [if applicable, e.g., PostgreSQL, CoreData, files or N/A]
+
+## Active Technologies
+- Python 3.11, JavaScript/TypeScript for frontend integration + FastAPI, Qdrant, Neon Postgres, OpenAI API, Docusaurus (001-ai-robotics-textbook)
+- Neon Postgres for conversation history and user logs, Qdrant for document embeddings (001-ai-robotics-textbook)
