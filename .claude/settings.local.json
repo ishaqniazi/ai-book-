@@ -48,7 +48,8 @@
       "Bash(git mv package-lock.json backend/nodejs/)",
       "Bash(git mv server.js backend/nodejs/)",
       "Bash(git mv docs frontend/)",
-      "Bash(move docs frontend)"
+      "Bash(move docs frontend)",
+      "Bash(npm run dev)"
     ]
   }
 }
