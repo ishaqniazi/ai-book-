@@ -15,15 +15,15 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://ai-book-xi-jade.vercel.app',
+  url: 'https://ai-book-m2akow0gi-ishaq-niazis-projects.vercel.app',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'user', // Usually your GitHub org/user name.
-  projectName: 'ai-textbook', // Usually your repo name.
+  organizationName: 'ishaq-niazi', // Usually your GitHub org/user name.
+  projectName: 'ai-book', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -45,7 +45,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/user/ai-textbook/edit/main/',
+            'https://github.com/ishaq-niazi/ai-book/edit/main/',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -74,7 +74,7 @@ const config: Config = {
           label: 'Textbook',
         },
         {
-          href: 'https://github.com/user/ai-textbook',
+          href: 'https://github.com/ishaq-niazi/ai-book',
           label: 'GitHub',
           position: 'right',
         },
@@ -114,7 +114,7 @@ const config: Config = {
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/user/ai-textbook',
+              href: 'https://github.com/ishaq-niazi/ai-book',
             },
           ],
         },
