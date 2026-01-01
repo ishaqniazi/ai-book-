@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-module3/week8-vision-systems" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Vision Systems (Conceptual) | Physical AI &amp; Humanoid Robotics Textbook</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://ai-book-xi-jade.vercel.app/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://ai-book-xi-jade.vercel.app/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://ai-book-xi-jade.vercel.app/docs/module3/week8-vision-systems"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Vision Systems (Conceptual) | Physical AI &amp; Humanoid Robotics Textbook"><meta data-rh="true" name="description" content="Understanding visual perception systems in Physical AI and their role in environmental understanding"><meta data-rh="true" property="og:description" content="Understanding visual perception systems in Physical AI and their role in environmental understanding"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://ai-book-xi-jade.vercel.app/docs/module3/week8-vision-systems"><link data-rh="true" rel="alternate" href="https://ai-book-xi-jade.vercel.app/docs/module3/week8-vision-systems" hreflang="en"><link data-rh="true" rel="alternate" href="https://ai-book-xi-jade.vercel.app/docs/module3/week8-vision-systems" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Vision Systems (Conceptual)","item":"https://ai-book-xi-jade.vercel.app/docs/module3/week8-vision-systems"}]}</script><link rel="stylesheet" href="/assets/css/styles.bbf7ebbe.css">
+<script src="/assets/js/runtime~main.26ff6a99.js" defer="defer"></script>
+<script src="/assets/js/main.d94454bc.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/img/logo.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_oPtH" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="Physical AI &amp; Humanoid Robotics Textbook Logo" class="themedComponent_siVc themedComponent--light_hHel"><img src="/img/logo.svg" alt="Physical AI &amp; Humanoid Robotics Textbook Logo" class="themedComponent_siVc themedComponent--dark_yETr"></div><b class="navbar__title text--truncate">Physical AI Textbook</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/intro">Textbook</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/ishaq-niazi/ai-book" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPrP"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_ki11 colorModeToggle_Hewu"><button class="clean-btn toggleButton_MMFG toggleButtonDisabled_Uw7m" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_k9hJ lightToggleIcon_lgto"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_k9hJ darkToggleIcon_U96C"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_k9hJ systemToggleIcon_E5c0"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_bzqh"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_MB5r"><div class="docsWrapper__sE8"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_iEvu" type="button"></button><div class="docRoot_DfVB"><aside class="theme-doc-sidebar-container docSidebarContainer_c7NB"><div class="sidebarViewport_KYo0"><div class="sidebar_CUen"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_jmj1"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/intro"><span title="Introduction to Physical AI &amp; Humanoid Robotics" class="linkLabel_fEdy">Introduction to Physical AI &amp; Humanoid Robotics</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_ROYx menu__link menu__link--sublist" href="/docs/category/tutorial---basics"><span title="Tutorial - Basics" class="categoryLinkLabel_ufhF">Tutorial - Basics</span></a><button aria-label="Expand sidebar category &#x27;Tutorial - Basics&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_ROYx menu__link menu__link--sublist" href="/docs/category/tutorial---extras"><span title="Tutorial - Extras" class="categoryLinkLabel_ufhF">Tutorial - Extras</span></a><button aria-label="Expand sidebar category &#x27;Tutorial - Extras&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/module1/week1-foundations-of-physical-ai"><span title="module1" class="categoryLinkLabel_ufhF">module1</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/module2/week6-physics-interaction-basics"><span title="module2" class="categoryLinkLabel_ufhF">module2</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/docs/module3/week8-vision-systems"><span title="module3" class="categoryLinkLabel_ufhF">module3</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/module3/week8-vision-systems"><span title="Vision Systems (Conceptual)" class="linkLabel_fEdy">Vision Systems (Conceptual)</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/module3/week9-mapping-environments"><span title="Mapping &amp; Understanding Environments" class="linkLabel_fEdy">Mapping &amp; Understanding Environments</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/module3/week10-navigation-path-planning"><span title="Navigation &amp; Path Planning" class="linkLabel_fEdy">Navigation &amp; Path Planning</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/module3/summary"><span title="Module 3 Summary: Perception &amp; Navigation" class="linkLabel_fEdy">Module 3 Summary: Perception &amp; Navigation</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_ROYx menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/module4/week11-kinematics-movement"><span title="module4" class="categoryLinkLabel_ufhF">module4</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_a9sJ"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_Qr34"><div class="docItemContainer_tjFy"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_T5ub" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_sfvy"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">module3</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Vision Systems (Conceptual)</span></li></ul></nav><div class="tocCollapsible_wXna theme-doc-toc-mobile tocMobile_Ojys"><button type="button" class="clean-btn tocCollapsibleButton_iI2p">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Vision Systems (Conceptual)</h1></header>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id="introduction-to-vision-in-physical-ai">Introduction to Vision in Physical AI<a href="#introduction-to-vision-in-physical-ai" class="hash-link" aria-label="Direct link to Introduction to Vision in Physical AI" title="Direct link to Introduction to Vision in Physical AI" translate="no">​</a></h2>
+<p>Vision systems represent one of the most important sensory modalities in Physical AI, providing rich information about the environment that enables sophisticated understanding and interaction. Unlike humans who have evolved complex visual systems over millions of years, artificial vision systems must be carefully designed to extract meaningful information from visual data.</p>
+<p>In Physical AI, vision systems serve multiple purposes: navigation and obstacle detection, object recognition and classification, spatial mapping, human interaction, and quality control. The effectiveness of a Physical AI system&#x27;s visual capabilities often determines its ability to function autonomously in complex environments.</p>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id="components-of-vision-systems">Components of Vision Systems<a href="#components-of-vision-systems" class="hash-link" aria-label="Direct link to Components of Vision Systems" title="Direct link to Components of Vision Systems" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id="hardware-components">Hardware Components<a href="#hardware-components" class="hash-link" aria-label="Direct link to Hardware Components" title="Direct link to Hardware Components" translate="no">​</a></h3>
+<p><strong>Cameras</strong>: The primary sensors for capturing visual information</p>
+<ul>
+<li class=""><strong>Resolution</strong>: Determines the level of detail that can be captured</li>
+<li class=""><strong>Frame Rate</strong>: Affects temporal resolution and motion capture</li>
+<li class=""><strong>Spectral Range</strong>: Visible light, infrared, ultraviolet, or other ranges</li>
+<li class=""><strong>Lens Properties</strong>: Field of view, focal length, and optical quality</li>
+</ul>
+<p><strong>Lighting Systems</strong>: Essential for consistent image capture</p>
+<ul>
+<li class=""><strong>Ambient Light</strong>: Environmental lighting conditions</li>
+<li class=""><strong>Active Lighting</strong>: LEDs, structured light, or other controlled illumination</li>
+<li class=""><strong>Polarization Filters</strong>: Reducing glare and improving contrast</li>
+<li class=""><strong>Spectral Filters</strong>: Isolating specific wavelength ranges</li>
+</ul>
+<p><strong>Optical Systems</strong>: Components that modify the captured light</p>
+<ul>
+<li class=""><strong>Lenses</strong>: Focusing light onto sensors</li>
+<li class=""><strong>Filters</strong>: Selecting specific wavelengths or properties</li>
+<li class=""><strong>Prisms and Mirrors</strong>: Redirecting light paths</li>
+<li class=""><strong>Beam Splitters</strong>: Separating light for multiple sensors</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id="software-components">Software Components<a href="#software-components" class="hash-link" aria-label="Direct link to Software Components" title="Direct link to Software Components" translate="no">​</a></h3>
+<p><strong>Image Processing Pipeline</strong>: The sequence of operations applied to raw image data</p>
+<ul>
+<li class=""><strong>Preprocessing</strong>: Noise reduction, calibration, and enhancement</li>
+<li class=""><strong>Feature Extraction</strong>: Identifying relevant patterns in images</li>
+<li class=""><strong>Analysis</strong>: Interpreting features to understand content</li>
+<li class=""><strong>Decision Making</strong>: Using vision information for system control</li>
+</ul>
+<p><strong>Algorithms</strong>: The computational methods for extracting information</p>
+<ul>
+<li class=""><strong>Classical Computer Vision</strong>: Mathematical approaches to image analysis</li>
+<li class=""><strong>Machine Learning</strong>: Data-driven approaches to pattern recognition</li>
+<li class=""><strong>Deep Learning</strong>: Neural network approaches to complex visual tasks</li>
+<li class=""><strong>Hybrid Approaches</strong>: Combining multiple algorithmic strategies</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id="image-formation-and-processing">Image Formation and Processing<a href="#image-formation-and-processing" class="hash-link" aria-label="Direct link to Image Formation and Processing" title="Direct link to Image Formation and Processing" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id="digital-image-representation">Digital Image Representation<a href="#digital-image-representation" class="hash-link" aria-label="Direct link to Digital Image Representation" title="Direct link to Digital Image Representation" translate="no">​</a></h3>
+<p>Digital images are represented as arrays of pixels, each containing intensity or color information. The quality and usability of visual information depends on multiple factors:</p>
+<p><strong>Spatial Resolution</strong>: The number of pixels and their density affect the level of detail that can be captured and analyzed.</p>
+<p><strong>Temporal Resolution</strong>: The frame rate determines how motion can be captured and tracked over time.</p>
+<p><strong>Spectral Resolution</strong>: The color depth and number of color channels affect color recognition and material identification.</p>
+<p><strong>Dynamic Range</strong>: The ability to capture both bright and dark areas in the same image.</p>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id="image-enhancement">Image Enhancement<a href="#image-enhancement" class="hash-link" aria-label="Direct link to Image Enhancement" title="Direct link to Image Enhancement" translate="no">​</a></h3>
+<p>Raw images often require enhancement to improve their usability:</p>
+<p><strong>Noise Reduction</strong>: Removing random variations that don&#x27;t represent true scene information</p>
+<ul>
+<li class=""><strong>Gaussian filtering</strong>: Smooths noise while preserving edges</li>
+<li class=""><strong>Median filtering</strong>: Removes salt-and-pepper noise</li>
+<li class=""><strong>Wavelet denoising</strong>: Preserves detail while removing noise</li>
+</ul>
+<p><strong>Contrast Enhancement</strong>: Improving the visibility of features</p>
+<ul>
+<li class=""><strong>Histogram equalization</strong>: Distributing intensity values for better contrast</li>
+<li class=""><strong>Adaptive enhancement</strong>: Adjusting based on local image characteristics</li>
+<li class=""><strong>Unsharp masking</strong>: Enhancing edges and fine details</li>
+</ul>
+<p><strong>Geometric Correction</strong>: Correcting for optical distortions</p>
+<ul>
+<li class=""><strong>Lens distortion correction</strong>: Removing barrel or pincushion effects</li>
+<li class=""><strong>Perspective correction</strong>: Adjusting for camera angle effects</li>
+<li class=""><strong>Image registration</strong>: Aligning multiple images or views</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id="feature-detection-and-extraction">Feature Detection and Extraction<a href="#feature-detection-and-extraction" class="hash-link" aria-label="Direct link to Feature Detection and Extraction" title="Direct link to Feature Detection and Extraction" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id="low-level-features">Low-Level Features<a href="#low-level-features" class="hash-link" aria-label="Direct link to Low-Level Features" title="Direct link to Low-Level Features" translate="no">​</a></h3>
+<p><strong>Edge Detection</strong>: Identifying boundaries between different regions</p>
+<ul>
+<li class=""><strong>Gradient-based methods</strong>: Finding areas of rapid intensity change</li>
+<li class=""><strong>Canny edge detector</strong>: Optimal edge detection with noise suppression</li>
+<li class=""><strong>Laplacian of Gaussian</strong>: Detecting edges at multiple scales</li>
+</ul>
+<p><strong>Corner Detection</strong>: Identifying points where edges intersect</p>
+<ul>
+<li class=""><strong>Harris corner detector</strong>: Finding points with large intensity changes</li>
+<li class=""><strong>Shi-Tomasi</strong>: Improved corner detection algorithm</li>
+<li class=""><strong>FAST</strong>: Fast corner detection for real-time applications</li>
+</ul>
+<p><strong>Blob Detection</strong>: Identifying connected regions of similar intensity</p>
+<ul>
+<li class=""><strong>Connected components</strong>: Grouping adjacent similar pixels</li>
+<li class=""><strong>Laplacian of Gaussian</strong>: Finding blobs at multiple scales</li>
+<li class=""><strong>Difference of Gaussians</strong>: Approximating LoG for efficiency</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id="mid-level-features">Mid-Level Features<a href="#mid-level-features" class="hash-link" aria-label="Direct link to Mid-Level Features" title="Direct link to Mid-Level Features" translate="no">​</a></h3>
+<p><strong>Texture Analysis</strong>: Understanding surface properties</p>
+<ul>
+<li class=""><strong>Local Binary Patterns</strong>: Describing local texture patterns</li>
+<li class=""><strong>Gabor Filters</strong>: Analyzing texture at different scales and orientations</li>
+<li class=""><strong>Gray-Level Co-occurrence Matrices</strong>: Statistical texture descriptors</li>
+</ul>
+<p><strong>Shape Descriptors</strong>: Characterizing object shapes</p>
+<ul>
+<li class=""><strong>Contour analysis</strong>: Describing object boundaries</li>
+<li class=""><strong>Hu moments</strong>: Invariant shape descriptors</li>
+<li class=""><strong>Fourier descriptors</strong>: Frequency domain shape representation</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id="high-level-features">High-Level Features<a href="#high-level-features" class="hash-link" aria-label="Direct link to High-Level Features" title="Direct link to High-Level Features" translate="no">​</a></h3>
+<p><strong>Object Parts</strong>: Identifying components of complex objects</p>
+<ul>
+<li class=""><strong>Part-based models</strong>: Representing objects as collections of parts</li>
+<li class=""><strong>Deformable part models</strong>: Allowing for shape variations</li>
+<li class=""><strong>Pose estimation</strong>: Understanding object orientation and configuration</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id="object-recognition-and-classification">Object Recognition and Classification<a href="#object-recognition-and-classification" class="hash-link" aria-label="Direct link to Object Recognition and Classification" title="Direct link to Object Recognition and Classification" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id="traditional-approaches">Traditional Approaches<a href="#traditional-approaches" class="hash-link" aria-label="Direct link to Traditional Approaches" title="Direct link to Traditional Approaches" translate="no">​</a></h3>
+<p><strong>Template Matching</strong>: Comparing image regions to known object templates</p>
+<ul>
+<li class=""><strong>Normalized cross-correlation</strong>: Matching with illumination invariance</li>
+<li class=""><strong>Feature-based matching</strong>: Matching specific features rather than pixels</li>
+<li class=""><strong>Multi-scale matching</strong>: Handling different object sizes</li>
+</ul>
+<p><strong>Bag of Words</strong>: Representing images as collections of visual words</p>
+<ul>
+<li class=""><strong>Codebook generation</strong>: Creating visual vocabulary</li>
+<li class=""><strong>Histogram representation</strong>: Counting visual word occurrences</li>
+<li class=""><strong>Spatial extension</strong>: Adding positional information</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id="machine-learning-approaches">Machine Learning Approaches<a href="#machine-learning-approaches" class="hash-link" aria-label="Direct link to Machine Learning Approaches" title="Direct link to Machine Learning Approaches" translate="no">​</a></h3>
+<p><strong>Support Vector Machines</strong>: Linear and non-linear classification</p>
+<ul>
+<li class=""><strong>Kernel methods</strong>: Handling non-linear decision boundaries</li>
+<li class=""><strong>Multi-class extensions</strong>: Classifying multiple object categories</li>
+<li class=""><strong>Feature engineering</strong>: Designing effective input representations</li>
+</ul>
+<p><strong>Random Forests</strong>: Ensemble methods for robust classification</p>
+<ul>
+<li class=""><strong>Decision trees</strong>: Creating interpretable classification rules</li>
+<li class=""><strong>Bootstrap aggregation</strong>: Combining multiple trees for robustness</li>
+<li class=""><strong>Feature importance</strong>: Understanding which features matter most</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id="deep-learning-approaches">Deep Learning Approaches<a href="#deep-learning-approaches" class="hash-link" aria-label="Direct link to Deep Learning Approaches" title="Direct link to Deep Learning Approaches" translate="no">​</a></h3>
+<p><strong>Convolutional Neural Networks</strong>: End-to-end learning of visual features</p>
+<ul>
+<li class=""><strong>Feature learning</strong>: Automatically discovering relevant features</li>
+<li class=""><strong>Hierarchical processing</strong>: Building complex features from simple ones</li>
+<li class=""><strong>Transfer learning</strong>: Adapting pre-trained networks for new tasks</li>
+</ul>
+<p><strong>Modern Architectures</strong>: Advanced network designs</p>
+<ul>
+<li class=""><strong>Residual networks</strong>: Handling very deep architectures</li>
+<li class=""><strong>Attention mechanisms</strong>: Focusing on relevant image regions</li>
+<li class=""><strong>Vision transformers</strong>: Applying transformer architecture to images</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id="3d-vision-and-depth-perception">3D Vision and Depth Perception<a href="#3d-vision-and-depth-perception" class="hash-link" aria-label="Direct link to 3D Vision and Depth Perception" title="Direct link to 3D Vision and Depth Perception" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id="stereo-vision">Stereo Vision<a href="#stereo-vision" class="hash-link" aria-label="Direct link to Stereo Vision" title="Direct link to Stereo Vision" translate="no">​</a></h3>
+<p>Stereo vision uses multiple cameras to estimate depth:</p>
+<ul>
+<li class=""><strong>Epipolar geometry</strong>: Mathematical relationship between camera views</li>
+<li class=""><strong>Feature matching</strong>: Finding corresponding points in different views</li>
+<li class=""><strong>Disparity computation</strong>: Calculating depth from image differences</li>
+<li class=""><strong>Dense reconstruction</strong>: Creating detailed 3D models</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id="depth-sensors">Depth Sensors<a href="#depth-sensors" class="hash-link" aria-label="Direct link to Depth Sensors" title="Direct link to Depth Sensors" translate="no">​</a></h3>
+<p><strong>Time-of-Flight</strong>: Measuring light travel time for depth</p>
+<ul>
+<li class=""><strong>Active illumination</strong>: Requires special lighting</li>
+<li class=""><strong>High accuracy</strong>: Precise depth measurements</li>
+<li class=""><strong>Range limitations</strong>: Effective only to certain distances</li>
+</ul>
+<p><strong>Structured Light</strong>: Projecting known patterns for depth estimation</p>
+<ul>
+<li class=""><strong>Pattern projection</strong>: Using known geometric patterns</li>
+<li class=""><strong>Deformation analysis</strong>: Understanding depth from pattern changes</li>
+<li class=""><strong>High resolution</strong>: Detailed depth information</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id="monocular-depth-estimation">Monocular Depth Estimation<a href="#monocular-depth-estimation" class="hash-link" aria-label="Direct link to Monocular Depth Estimation" title="Direct link to Monocular Depth Estimation" translate="no">​</a></h3>
+<p><strong>Shape from Shading</strong>: Using lighting cues for depth</p>
+<ul>
+<li class=""><strong>Surface orientation</strong>: Understanding surface angles</li>
+<li class=""><strong>Lighting models</strong>: Modeling how light interacts with surfaces</li>
+<li class=""><strong>Shading analysis</strong>: Extracting depth from brightness variations</li>
+</ul>
+<p><strong>Learning-based Methods</strong>: Using machine learning for monocular depth</p>
+<ul>
+<li class=""><strong>Deep networks</strong>: Learning depth from single images</li>
+<li class=""><strong>Multi-view supervision</strong>: Training with stereo data</li>
+<li class=""><strong>Real-time performance</strong>: Fast depth estimation</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id="visual-slam-simultaneous-localization-and-mapping">Visual SLAM (Simultaneous Localization and Mapping)<a href="#visual-slam-simultaneous-localization-and-mapping" class="hash-link" aria-label="Direct link to Visual SLAM (Simultaneous Localization and Mapping)" title="Direct link to Visual SLAM (Simultaneous Localization and Mapping)" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id="slam-fundamentals">SLAM Fundamentals<a href="#slam-fundamentals" class="hash-link" aria-label="Direct link to SLAM Fundamentals" title="Direct link to SLAM Fundamentals" translate="no">​</a></h3>
+<p>SLAM enables robots to simultaneously map their environment and determine their location within it:</p>
+<ul>
+<li class=""><strong>State estimation</strong>: Tracking robot position and orientation</li>
+<li class=""><strong>Map building</strong>: Creating representations of the environment</li>
+<li class=""><strong>Data association</strong>: Matching observations to map features</li>
+<li class=""><strong>Loop closure</strong>: Recognizing previously visited locations</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id="visual-slam-components">Visual SLAM Components<a href="#visual-slam-components" class="hash-link" aria-label="Direct link to Visual SLAM Components" title="Direct link to Visual SLAM Components" translate="no">​</a></h3>
+<p><strong>Feature Tracking</strong>: Following visual features across frames</p>
+<ul>
+<li class=""><strong>Keypoint detection</strong>: Finding stable image features</li>
+<li class=""><strong>Descriptor computation</strong>: Creating unique feature representations</li>
+<li class=""><strong>Tracking algorithms</strong>: Following features over time</li>
+</ul>
+<p><strong>Pose Estimation</strong>: Determining camera motion</p>
+<ul>
+<li class=""><strong>Essential matrix</strong>: Relating camera motion to feature motion</li>
+<li class=""><strong>Bundle adjustment</strong>: Optimizing pose and structure estimates</li>
+<li class=""><strong>Motion models</strong>: Predicting likely robot motion patterns</li>
+</ul>
+<p><strong>Mapping</strong>: Building environmental representations</p>
+<ul>
+<li class=""><strong>Feature maps</strong>: Storing visual landmarks</li>
+<li class=""><strong>Dense reconstruction</strong>: Creating detailed 3D models</li>
+<li class=""><strong>Semantic mapping</strong>: Adding object labels to maps</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id="challenges-in-visual-slam">Challenges in Visual SLAM<a href="#challenges-in-visual-slam" class="hash-link" aria-label="Direct link to Challenges in Visual SLAM" title="Direct link to Challenges in Visual SLAM" translate="no">​</a></h3>
+<p><strong>Scale Ambiguity</strong>: Monocular vision cannot determine absolute scale</p>
+<ul>
+<li class=""><strong>Scale recovery</strong>: Using additional sensors or constraints</li>
+<li class=""><strong>Relative scale</strong>: Maintaining consistent relative dimensions</li>
+<li class=""><strong>Scale drift</strong>: Accumulating scale errors over time</li>
+</ul>
+<p><strong>Motion Blur</strong>: Fast motion causing image degradation</p>
+<ul>
+<li class=""><strong>High-speed cameras</strong>: Capturing images faster</li>
+<li class=""><strong>Motion deblurring</strong>: Recovering sharp images from blurred ones</li>
+<li class=""><strong>Predictive tracking</strong>: Anticipating motion for stable capture</li>
+</ul>
+<p><strong>Low Texture</strong>: Featureless surfaces causing tracking failure</p>
+<ul>
+<li class=""><strong>Learned features</strong>: Using deep learning for textureless regions</li>
+<li class=""><strong>Active illumination</strong>: Adding texture with projected patterns</li>
+<li class=""><strong>Multi-modal fusion</strong>: Combining with other sensors</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id="real-time-processing-considerations">Real-Time Processing Considerations<a href="#real-time-processing-considerations" class="hash-link" aria-label="Direct link to Real-Time Processing Considerations" title="Direct link to Real-Time Processing Considerations" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id="computational-efficiency">Computational Efficiency<a href="#computational-efficiency" class="hash-link" aria-label="Direct link to Computational Efficiency" title="Direct link to Computational Efficiency" translate="no">​</a></h3>
+<p><strong>Algorithm Selection</strong>: Choosing appropriate algorithms for real-time constraints</p>
+<ul>
+<li class=""><strong>Fast approximations</strong>: Trading accuracy for speed</li>
+<li class=""><strong>Hardware acceleration</strong>: Using GPUs or specialized chips</li>
+<li class=""><strong>Algorithm optimization</strong>: Improving computational efficiency</li>
+</ul>
+<p><strong>Parallel Processing</strong>: Exploiting parallel computation opportunities</p>
+<ul>
+<li class=""><strong>Multi-threading</strong>: Processing different tasks simultaneously</li>
+<li class=""><strong>Pipeline processing</strong>: Overlapping different processing stages</li>
+<li class=""><strong>GPU computing</strong>: Using graphics processors for vision tasks</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id="memory-management">Memory Management<a href="#memory-management" class="hash-link" aria-label="Direct link to Memory Management" title="Direct link to Memory Management" translate="no">​</a></h3>
+<p><strong>Data Storage</strong>: Efficiently storing and accessing image data</p>
+<ul>
+<li class=""><strong>Image compression</strong>: Reducing memory requirements</li>
+<li class=""><strong>Cache optimization</strong>: Storing frequently accessed data</li>
+<li class=""><strong>Streaming</strong>: Processing data as it arrives</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id="applications-in-physical-ai">Applications in Physical AI<a href="#applications-in-physical-ai" class="hash-link" aria-label="Direct link to Applications in Physical AI" title="Direct link to Applications in Physical AI" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id="navigation-and-obstacle-avoidance">Navigation and Obstacle Avoidance<a href="#navigation-and-obstacle-avoidance" class="hash-link" aria-label="Direct link to Navigation and Obstacle Avoidance" title="Direct link to Navigation and Obstacle Avoidance" translate="no">​</a></h3>
+<p>Vision systems enable robots to navigate complex environments:</p>
+<ul>
+<li class=""><strong>Path planning</strong>: Using visual information to plan safe routes</li>
+<li class=""><strong>Obstacle detection</strong>: Identifying and avoiding obstacles</li>
+<li class=""><strong>Terrain analysis</strong>: Understanding ground conditions</li>
+<li class=""><strong>Dynamic obstacle tracking</strong>: Following moving obstacles</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id="object-manipulation">Object Manipulation<a href="#object-manipulation" class="hash-link" aria-label="Direct link to Object Manipulation" title="Direct link to Object Manipulation" translate="no">​</a></h3>
+<p>Visual guidance enables precise manipulation:</p>
+<ul>
+<li class=""><strong>Grasp planning</strong>: Determining optimal grasp points</li>
+<li class=""><strong>Alignment</strong>: Precisely positioning objects</li>
+<li class=""><strong>Assembly</strong>: Guiding complex assembly tasks</li>
+<li class=""><strong>Quality control</strong>: Inspecting manipulated objects</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id="human-interaction">Human Interaction<a href="#human-interaction" class="hash-link" aria-label="Direct link to Human Interaction" title="Direct link to Human Interaction" translate="no">​</a></h3>
+<p>Vision enables natural human-robot interaction:</p>
+<ul>
+<li class=""><strong>Gesture recognition</strong>: Understanding human hand and body gestures</li>
+<li class=""><strong>Facial expression</strong>: Recognizing human emotions and attention</li>
+<li class=""><strong>Eye contact</strong>: Maintaining appropriate visual contact</li>
+<li class=""><strong>Spatial awareness</strong>: Understanding human positioning and intent</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id="challenges-and-limitations">Challenges and Limitations<a href="#challenges-and-limitations" class="hash-link" aria-label="Direct link to Challenges and Limitations" title="Direct link to Challenges and Limitations" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id="environmental-challenges">Environmental Challenges<a href="#environmental-challenges" class="hash-link" aria-label="Direct link to Environmental Challenges" title="Direct link to Environmental Challenges" translate="no">​</a></h3>
+<p><strong>Lighting Variations</strong>: Changing illumination affecting image quality</p>
+<ul>
+<li class=""><strong>Shadows</strong>: Creating difficult-to-analyze regions</li>
+<li class=""><strong>Reflections</strong>: Causing false features or missing information</li>
+<li class=""><strong>Backlighting</strong>: Silhouetting objects against bright backgrounds</li>
+<li class=""><strong>Low light</strong>: Reducing image quality and feature visibility</li>
+</ul>
+<p><strong>Weather Conditions</strong>: Environmental factors affecting vision</p>
+<ul>
+<li class=""><strong>Fog</strong>: Reducing visibility and contrast</li>
+<li class=""><strong>Rain</strong>: Creating motion artifacts and reflections</li>
+<li class=""><strong>Snow</strong>: Reducing texture and creating uniform regions</li>
+<li class=""><strong>Dust</strong>: Obstructing camera views</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id="technical-challenges">Technical Challenges<a href="#technical-challenges" class="hash-link" aria-label="Direct link to Technical Challenges" title="Direct link to Technical Challenges" translate="no">​</a></h3>
+<p><strong>Occlusions</strong>: Objects blocking view of other objects</p>
+<ul>
+<li class=""><strong>Partial occlusion</strong>: Objects partially blocking each other</li>
+<li class=""><strong>Dynamic occlusion</strong>: Moving objects blocking views</li>
+<li class=""><strong>Self-occlusion</strong>: Robot parts blocking its own view</li>
+<li class=""><strong>Recovery strategies</strong>: Handling temporary information loss</li>
+</ul>
+<p><strong>Scale and Distance</strong>: Objects appearing different at different distances</p>
+<ul>
+<li class=""><strong>Size invariance</strong>: Recognizing objects regardless of distance</li>
+<li class=""><strong>Resolution limitations</strong>: Fine details becoming indistinguishable</li>
+<li class=""><strong>Perspective effects</strong>: Objects appearing differently from different angles</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_tleR" id="future-directions">Future Directions<a href="#future-directions" class="hash-link" aria-label="Direct link to Future Directions" title="Direct link to Future Directions" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id="emerging-technologies">Emerging Technologies<a href="#emerging-technologies" class="hash-link" aria-label="Direct link to Emerging Technologies" title="Direct link to Emerging Technologies" translate="no">​</a></h3>
+<p><strong>Event Cameras</strong>: Sensors that capture changes rather than absolute values</p>
+<ul>
+<li class=""><strong>High temporal resolution</strong>: Capturing rapid changes</li>
+<li class=""><strong>Low latency</strong>: Immediate response to scene changes</li>
+<li class=""><strong>High dynamic range</strong>: Handling extreme lighting conditions</li>
+</ul>
+<p><strong>Computational Photography</strong>: Advanced image capture techniques</p>
+<ul>
+<li class=""><strong>Multi-exposure fusion</strong>: Combining images for better dynamic range</li>
+<li class=""><strong>Light field cameras</strong>: Capturing 4D light information</li>
+<li class=""><strong>Computational depth</strong>: Estimating depth from computational techniques</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_tleR" id="integration-with-other-modalities">Integration with Other Modalities<a href="#integration-with-other-modalities" class="hash-link" aria-label="Direct link to Integration with Other Modalities" title="Direct link to Integration with Other Modalities" translate="no">​</a></h3>
+<p><strong>Multi-sensor Fusion</strong>: Combining vision with other sensors</p>
+<ul>
+<li class=""><strong>Visual-inertial fusion</strong>: Combining cameras with IMUs</li>
+<li class=""><strong>Visual-LIDAR fusion</strong>: Combining vision with range sensors</li>
+<li class=""><strong>Cross-modal learning</strong>: Learning from multiple sensor types</li>
+</ul>
+<p>Understanding vision systems provides the foundation for creating Physical AI systems that can effectively perceive and understand their visual environment, enabling sophisticated interaction and navigation capabilities in subsequent modules.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-tags-row"><div class="col"><b>Tags:</b><ul class="tags_Ow0B padding--none margin-left--sm"><li class="tag_DFxh"><a rel="tag" class="tag_otG2 tagRegular_s0E1" href="/docs/tags/computer-vision">computer-vision</a></li><li class="tag_DFxh"><a rel="tag" class="tag_otG2 tagRegular_s0E1" href="/docs/tags/perception">perception</a></li><li class="tag_DFxh"><a rel="tag" class="tag_otG2 tagRegular_s0E1" href="/docs/tags/robotics">robotics</a></li><li class="tag_DFxh"><a rel="tag" class="tag_otG2 tagRegular_s0E1" href="/docs/tags/vision">vision</a></li></ul></div></div><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_QeZL"><a href="https://github.com/ishaq-niazi/ai-book/edit/main/docs/module3/week8-vision-systems.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_bHB7" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_ydrU"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/module2/summary"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Module 2 Summary: Physical Interaction &amp; Dynamics</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/module3/week9-mapping-environments"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Mapping &amp; Understanding Environments</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_XG6w thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#introduction-to-vision-in-physical-ai" class="table-of-contents__link toc-highlight">Introduction to Vision in Physical AI</a></li><li><a href="#components-of-vision-systems" class="table-of-contents__link toc-highlight">Components of Vision Systems</a><ul><li><a href="#hardware-components" class="table-of-contents__link toc-highlight">Hardware Components</a></li><li><a href="#software-components" class="table-of-contents__link toc-highlight">Software Components</a></li></ul></li><li><a href="#image-formation-and-processing" class="table-of-contents__link toc-highlight">Image Formation and Processing</a><ul><li><a href="#digital-image-representation" class="table-of-contents__link toc-highlight">Digital Image Representation</a></li><li><a href="#image-enhancement" class="table-of-contents__link toc-highlight">Image Enhancement</a></li></ul></li><li><a href="#feature-detection-and-extraction" class="table-of-contents__link toc-highlight">Feature Detection and Extraction</a><ul><li><a href="#low-level-features" class="table-of-contents__link toc-highlight">Low-Level Features</a></li><li><a href="#mid-level-features" class="table-of-contents__link toc-highlight">Mid-Level Features</a></li><li><a href="#high-level-features" class="table-of-contents__link toc-highlight">High-Level Features</a></li></ul></li><li><a href="#object-recognition-and-classification" class="table-of-contents__link toc-highlight">Object Recognition and Classification</a><ul><li><a href="#traditional-approaches" class="table-of-contents__link toc-highlight">Traditional Approaches</a></li><li><a href="#machine-learning-approaches" class="table-of-contents__link toc-highlight">Machine Learning Approaches</a></li><li><a href="#deep-learning-approaches" class="table-of-contents__link toc-highlight">Deep Learning Approaches</a></li></ul></li><li><a href="#3d-vision-and-depth-perception" class="table-of-contents__link toc-highlight">3D Vision and Depth Perception</a><ul><li><a href="#stereo-vision" class="table-of-contents__link toc-highlight">Stereo Vision</a></li><li><a href="#depth-sensors" class="table-of-contents__link toc-highlight">Depth Sensors</a></li><li><a href="#monocular-depth-estimation" class="table-of-contents__link toc-highlight">Monocular Depth Estimation</a></li></ul></li><li><a href="#visual-slam-simultaneous-localization-and-mapping" class="table-of-contents__link toc-highlight">Visual SLAM (Simultaneous Localization and Mapping)</a><ul><li><a href="#slam-fundamentals" class="table-of-contents__link toc-highlight">SLAM Fundamentals</a></li><li><a href="#visual-slam-components" class="table-of-contents__link toc-highlight">Visual SLAM Components</a></li><li><a href="#challenges-in-visual-slam" class="table-of-contents__link toc-highlight">Challenges in Visual SLAM</a></li></ul></li><li><a href="#real-time-processing-considerations" class="table-of-contents__link toc-highlight">Real-Time Processing Considerations</a><ul><li><a href="#computational-efficiency" class="table-of-contents__link toc-highlight">Computational Efficiency</a></li><li><a href="#memory-management" class="table-of-contents__link toc-highlight">Memory Management</a></li></ul></li><li><a href="#applications-in-physical-ai" class="table-of-contents__link toc-highlight">Applications in Physical AI</a><ul><li><a href="#navigation-and-obstacle-avoidance" class="table-of-contents__link toc-highlight">Navigation and Obstacle Avoidance</a></li><li><a href="#object-manipulation" class="table-of-contents__link toc-highlight">Object Manipulation</a></li><li><a href="#human-interaction" class="table-of-contents__link toc-highlight">Human Interaction</a></li></ul></li><li><a href="#challenges-and-limitations" class="table-of-contents__link toc-highlight">Challenges and Limitations</a><ul><li><a href="#environmental-challenges" class="table-of-contents__link toc-highlight">Environmental Challenges</a></li><li><a href="#technical-challenges" class="table-of-contents__link toc-highlight">Technical Challenges</a></li></ul></li><li><a href="#future-directions" class="table-of-contents__link toc-highlight">Future Directions</a><ul><li><a href="#emerging-technologies" class="table-of-contents__link toc-highlight">Emerging Technologies</a></li><li><a href="#integration-with-other-modalities" class="table-of-contents__link toc-highlight">Integration with Other Modalities</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/intro">Textbook</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPrP"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://discordapp.com/invite/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPrP"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://x.com/docusaurus" target="_blank" rel="noopener noreferrer" class="footer__link-item">X<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPrP"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/ishaq-niazi/ai-book" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPrP"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 Physical AI & Humanoid Robotics Textbook. Built with Docusaurus.</div></div></div></footer><div class="chatbot-container"><button class="chatbot-button" aria-label="Open chatbot">💬</button></div></div>
+</body>
+</html>

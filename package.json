@@ -1,61 +1,29 @@
 {
-  "name": "textbook",
-  "version": "0.0.0",
+  "name": "ai-book-root",
+  "version": "1.0.0",
+  "description": "AI Book Project - Frontend and Backend Monorepo",
   "private": true,
+  "workspaces": [
+    "frontend",
+    "backend/nodejs"
+  ],
   "scripts": {
-    "docusaurus": "docusaurus",
-    "start": "docusaurus start",
-    "build": "docusaurus build",
-    "swizzle": "docusaurus swizzle",
-    "deploy": "docusaurus deploy",
-    "clear": "docusaurus clear",
-    "serve": "docusaurus serve",
-    "write-translations": "docusaurus write-translations",
-    "write-heading-ids": "docusaurus write-heading-ids",
-    "typecheck": "tsc",
-    "dev": "concurrently \"npm run docusaurus\" \"npm run backend\"",
-    "backend": "cd backend && npm run dev",
-    "install-all": "npm install && cd backend && npm install"
-  },
-  "dependencies": {
-    "@docusaurus/core": "3.9.2",
-    "@docusaurus/preset-classic": "3.9.2",
-    "@mdx-js/react": "^3.0.0",
-    "clsx": "^2.0.0",
-    "prism-react-renderer": "^2.3.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "dev": "concurrently \"npm run frontend:dev\" \"npm run backend:dev\"",
+    "frontend:dev": "cd frontend && npm run start",
+    "backend:dev": "cd backend/nodejs && npm run dev",
+    "frontend:build": "cd frontend && npm run build",
+    "backend:build": "cd backend/nodejs && npm run build",
+    "deploy": "npm run frontend:build"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "3.9.2",
-    "@docusaurus/tsconfig": "3.9.2",
-    "@docusaurus/types": "3.9.2",
-    "concurrently": "^8.2.0",
-    "typescript": "~5.6.2"
-  },
-  "browserslist": {
-    "production": [
-      ">0.5%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 3 chrome version",
-      "last 3 firefox version",
-      "last 5 safari version"
-    ]
-  },
-  "engines": {
-    "node": ">=20.0"
+    "concurrently": "^8.2.0"
   },
   "keywords": [
     "ai",
     "robotics",
     "textbook",
-    "education",
     "docusaurus",
-    "express",
-    "mongodb"
+    "education"
   ],
   "author": "AI Robotics Textbook Project",
   "license": "MIT"
