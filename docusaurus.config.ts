@@ -15,7 +15,7 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://ai-book-m2akow0gi-ishaq-niazis-projects.vercel.app',
+  url: 'https://ai-book-xi-jade.vercel.app',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
